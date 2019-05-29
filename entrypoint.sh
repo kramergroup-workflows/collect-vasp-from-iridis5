@@ -17,7 +17,7 @@ fi
 ssh -i /ssh/id_rsa -oStrictHostKeyChecking=no $USERNAME@$HOSTNAME "rm /scratch/$USERNAME/$BASEDIR/$JOB_NAME/vasp.* /scratch/$USERNAME/$BASEDIR/$JOB_NAME/qscript"
 
 # Copy the input files
-scp -i /ssh/id_rsa -oStrictHostKeyChecking=no -r $USERNAME@$HOSTNAME:/scratch/$USERNAME/$BASEDIR/$JOB_NAME /data/vasp
+scp -i /ssh/id_rsa -oStrictHostKeyChecking=no -r $USERNAME@$HOSTNAME:/scratch/$USERNAME/$BASEDIR/$JOB_NAME/* /data/vasp/*
 
 # Delete files from server
 # ssh -i /ssh/id_rsa -oStrictHostKeyChecking=no $USERNAME@$HOSTNAME "rm -rf /scratch/$USERNAME/$BASEDIR/$JOB_NAME"
