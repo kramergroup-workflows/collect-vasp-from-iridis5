@@ -21,7 +21,7 @@ ENV BASEDIR "workflows"
 ENV JOB_NAME "vasp" 
 
 RUN apk --no-cache add openssh-client bash gettext
-COPY --from=s3 bin/* /bin/
+
 COPY entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT [ "/entrypoint.sh" ]
