@@ -19,7 +19,7 @@ ssh -i /ssh/id_rsa -oStrictHostKeyChecking=no $USERNAME@$HOSTNAME "rm /scratch/$
 # Copy the input files
 # We pipe this through a tar command because it allows to write files to a folder without wildcards (which are problematic in scp)
 mkdir -p /data/vasp
-ssh -i /ssh/id_rsa -oStrictHostKeyChecking=no -r $USERNAME@$HOSTNAME tar czf - -C /scratch/$USERNAME/$BASEDIR/$JOB_NAME . | tar xzf - -C /data/vasp
+ssh -i /ssh/id_rsa -oStrictHostKeyChecking=no $USERNAME@$HOSTNAME "tar czf - -C /scratch/$USERNAME/$BASEDIR/$JOB_NAME ." | tar xzf - -C /data/vasp
 
 # Delete files from server
 # ssh -i /ssh/id_rsa -oStrictHostKeyChecking=no $USERNAME@$HOSTNAME "rm -rf /scratch/$USERNAME/$BASEDIR/$JOB_NAME"
