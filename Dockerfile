@@ -18,7 +18,7 @@ ENV BASEDIR "workflows"
 
 # The JOB_NAME will be used to identify the calculation
 # in the queue
-ENV JOB_NAME "vasp"
+ENV JOB_NAME "vasp" 
 
 RUN apk --no-cache add openssh-client bash gettext
 COPY --from=s3 bin/* /bin/
